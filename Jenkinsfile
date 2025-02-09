@@ -6,8 +6,8 @@ pipeline {
                 echo 'Building the React project...'
                 script {
                     // Run npm install and build commands for React
-                    sh 'npm install'
-                    sh 'npm run build'
+                    powershell 'npm install'
+                    powershell 'npm run build'
                 }
             }
         }
@@ -16,7 +16,7 @@ pipeline {
                 echo 'Running tests...'
                 script {
                     // Run tests using your testing framework (e.g., Jest)
-                    sh 'npm test'
+                    powershell 'npm test'
                 }
             }
         }
@@ -24,8 +24,8 @@ pipeline {
             steps {
                 echo 'Deploying the React app... on netlify'
                 script {
-                    sh 'npm install -g netlify-cli'
-                    sh 'netlify deploy --prod --auth $NETLIFY_AUTH_TOKEN --dir=dist'
+                    powershell 'npm install -g netlify-cli'
+                    powershell 'netlify deploy --prod --auth $NETLIFY_AUTH_TOKEN --dir=dist'
                 }
             }
         }
