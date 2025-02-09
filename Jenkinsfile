@@ -22,11 +22,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying the React app...'
+                echo 'Deploying the React app... on netlify'
                 script {
-                    // Deployment commands (Docker, FTP, etc.)
-                    // Example: Deploy using Docker or any tool of choice
-                    // sh 'docker-compose up -d'
+                    sh 'npm install -g netlify-cli'
+                    sh 'netlify deploy --prod --auth $NETLIFY_AUTH_TOKEN --dir=dist'
                 }
             }
         }
