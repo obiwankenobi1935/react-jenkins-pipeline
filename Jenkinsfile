@@ -23,8 +23,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the React app...'
-                // Deployment commands (Docker, FTP, etc.)
                 script {
+                    // Deployment commands (Docker, FTP, etc.)
                     // Example: Deploy using Docker or any tool of choice
                     // sh 'docker-compose up -d'
                 }
